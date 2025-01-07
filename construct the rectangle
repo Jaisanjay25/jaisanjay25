@@ -1,0 +1,11 @@
+class Solution {
+public:
+    vector<int> constructRectangle(int area) {
+        for (int width = sqrt(area); width > 0; width--) {
+            if (area % width == 0) {
+                return {area / width, width};
+            }
+        }
+        return {area, 1}; // Shouldn't reach here as there will always be a valid rectangle
+    }
+};
